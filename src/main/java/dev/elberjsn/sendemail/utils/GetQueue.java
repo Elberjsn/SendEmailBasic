@@ -32,9 +32,7 @@ public class GetQueue {
         String[] fila= filaOrigem.split("\\.");
 
         if (Objects.equals(fila[0], "email")){
-
             Email email = new Gson().fromJson(data, Email.class);
-
             switch (fila[1]){
                 case "bemvindo":
                     services.sendEmail(email, new BemVindo(email.nameTo(),email.toMail(),email.link()).generateTemplate(), "Bem Vindo ao nosso sistema!");
